@@ -21,6 +21,8 @@
 	
 	<bean id="sampleAOP" class="org.thinker.aop.SampleAOP"></bean>
 	
+	
+	
 	<bean id="multipartResolver"
         class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
  
