@@ -31,7 +31,11 @@ public class ServiceTest {
 	@Test
 	public void testAOP(){
 		
-		service.getListAll();
+		logger.info("-----------------------");
+		
+		logger.info(service.getListAll());
+		
+		logger.info("-----------------------");
 		
 	}	
 }

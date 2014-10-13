@@ -21,6 +21,13 @@
 	
 	<bean id="sampleAOP" class="org.thinker.aop.SampleAOP"></bean>
 	
+	<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+ 
+         <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="100000" />
+ 
+    </bean>
 	
 	<bean id="dataSource"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	  <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />

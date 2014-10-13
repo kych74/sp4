@@ -16,15 +16,15 @@ public class SampleAOP {
 	
 	@Around("aop1()")
 	public Object allLog(ProceedingJoinPoint joinPoint) throws Throwable{
-		System.out.println("*");
-		System.out.println("**");
+		logger.info("*");
+		logger.info("**");
 	  
 		try{
 			Object ret = joinPoint.proceed();
 			return ret;
 		}finally{
-			System.out.println("***");
-			System.out.println("****");
+			logger.info("***");
+			logger.info("****");
 		}
 	}
 }
