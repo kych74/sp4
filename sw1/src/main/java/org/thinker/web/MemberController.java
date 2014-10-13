@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.thinker.member.vo.MemberException;
 
 @Controller
-@RequestMapping("/member")
+@RequestMapping("/member/*")
 public class MemberController {
 	
 	
-
+	@RequestMapping("/doA")
 	public void doA(@RequestParam("value") String value)throws MemberException{
 		
 		if(value == null){
