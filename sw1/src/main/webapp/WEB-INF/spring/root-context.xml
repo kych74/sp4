@@ -17,11 +17,11 @@
 
     <context:component-scan base-package="org.thinker.member.**"></context:component-scan>
 
+    <context:component-scan base-package="org.thinker.txex.**"></context:component-scan>
+
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
 	<bean id="sampleAOP" class="org.thinker.aop.SampleAOP"></bean>
-	
-	
 	
 
 	
@@ -38,11 +38,24 @@
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
   	  <property name="dataSource" ref="dataSource" />
-      <property name="transactionFactory">
-        <bean class="org.apache.ibatis.transaction.managed.ManagedTransactionFactory" />
-      </property>  
     </bean>
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    	<tx:attributes>
+    		<tx:method name="get*" read-only="true" rollback-for="Exception"/>
+    		<tx:method name="*" />
+    	</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* org.thinker.txex.service.*.*(..))" id="txPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>	
+	</aop:config>
     
     <mybatis-spring:scan base-package="org.thinker.**.mapper"/>
     		
 </beans>
+
+
+
+

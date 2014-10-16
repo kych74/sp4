@@ -31,7 +31,14 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
+	
+	<logger name="java.sql.PreparedStatment">
+		<level value="info"></level>
+	</logger>
 
+	<logger name="org.thinker.txex.mapper.TxExMapper">
+		<level value="info"></level>
+	</logger>
 	<!-- Root Logger -->
 	<root>
 		<priority value="info" />
