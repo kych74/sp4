@@ -21,8 +21,8 @@ public class TxExServiceTest {
 	@Test
 	public void testInsert() throws Exception{
 		
-		String codeValue = "aaa";
-		String strValue = "aaa"; 
+		String codeValue = "ccc";
+		String strValue = "cccc"; 
 		
 		service.addData(codeValue, strValue);
 		

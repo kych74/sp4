@@ -40,19 +40,21 @@
   	  <property name="dataSource" ref="dataSource" />
     </bean>
     
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-    	<tx:attributes>
-    		<tx:method name="get*" read-only="true" rollback-for="Exception"/>
-    		<tx:method name="*" />
-    	</tx:attributes>
-	</tx:advice>
+<!--     <tx:advice id="txAdvice" transaction-manager="transactionManager"> -->
+<!--     	<tx:attributes> -->
+<!--     		<tx:method name="get*" read-only="true" rollback-for="Exception"/> -->
+<!--     		<tx:method name="*" /> -->
+<!--     	</tx:attributes> -->
+<!-- 	</tx:advice> -->
 	
-	<aop:config>
-		<aop:pointcut expression="execution(* org.thinker.txex.service.*.*(..))" id="txPointcut"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>	
-	</aop:config>
+<!-- 	<aop:config> -->
+<!-- 		<aop:pointcut expression="execution(* org.thinker.txex.service.*.*(..))" id="txPointcut"/> -->
+<!-- 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>	 -->
+<!-- 	</aop:config> -->
     
     <mybatis-spring:scan base-package="org.thinker.**.mapper"/>
+    
+    <tx:annotation-driven />
     		
 </beans>
 
