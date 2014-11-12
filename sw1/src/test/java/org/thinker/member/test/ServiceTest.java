@@ -30,6 +30,8 @@ public class ServiceTest {
 
 	@Test
 	public void testAOP(){
+
+		logger.info(service);
 		
 		logger.info("-----------------------");
 		
@@ -39,6 +41,25 @@ public class ServiceTest {
 		
 	}	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
